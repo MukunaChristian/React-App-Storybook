@@ -33,12 +33,8 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount,label }) => (
 
 
 Header.propTypes = {
-
- 
   label: PropTypes.string.isRequired,
-
 };
-Button.defaultProps = {
-  size: 'medium',
-  onClick: undefined,
+Header.defaultProps = {
+  
 };
