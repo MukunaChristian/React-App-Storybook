@@ -1,7 +1,6 @@
 // YourFormInput.stories.js
 import React from 'react';
 import Form from './FormInput';
-import { MantineProvider } from '@mantine/core';
 
 const defaultProps = {
   component: Form,
@@ -19,7 +18,5 @@ export default {
 };
 
 export const WithCustomProps = () => (
-  <MantineProvider>
     <Form {...defaultProps} />
-  </MantineProvider>
 );

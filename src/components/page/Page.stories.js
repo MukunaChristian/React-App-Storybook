@@ -1,5 +1,3 @@
-import { Button } from "@mantine/core";
-
 
 import { Page } from './Page';
 

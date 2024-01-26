@@ -63,6 +63,22 @@
     vertical-align: top;
     margin-top: 3px;
   }
+  .input{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
+    
+  }
+
+  .btn{
+    background-color: red;
+  }
+
+  .select{
+    border: none;
+    background-color: red;
+  }
   
   .storybook-page .tip-wrapper svg path {
     fill: #1ea7fd;

@@ -9,8 +9,6 @@ export default {
   tags: ['autodocs'],
 };
 
-// export const HeaderProps = () => <Header />;
-
 export const Primary = {
   args: {
     label: 'solutions',

@@ -4,7 +4,6 @@ import FormInput from "../FomInput/FormInput";
 import Button from "../Button/Button";
 import Title from "../Title/Tite";
 import { Header } from "../Header/Header";
-import { Card, TextInput, Box } from "@mantine/core";
 
 const TodoList = () => {
   const [label1] = useState("Metalogix Solutions")
@@ -28,19 +27,20 @@ const TodoList = () => {
   return (
     <>
         <Header label={label1} />
-        <Card shadow="sm" padding="lg" radius="md" withBorder>
     <div >
      <article>
       <div style={{ display: "flex", justifyContent: "center" }}>
         <Title myName={myName} />
       </div>
-      <div style={{ justifyContent: "center", display: "flex" }}>
+      <div style={{ justifyContent: "center", display: "flex", alignItems:"center", gap:"-0px" }}>
+        <div>
         <FormInput
       
           inputValue={inputValue}
           setInputValue={setInputValue}
           handleSubmit={handleSubmit}
         />
+        </div>
         <div>
           <Button
            style={{
@@ -57,7 +57,7 @@ const TodoList = () => {
       </div>
       <div
         style={{
-          
+
           boxShadow: "500%",
           backgroundColor: "#ADB5BD",
           display: "flex",
@@ -83,7 +83,6 @@ const TodoList = () => {
       </div>
       </article>
       </div>
-      </Card>
 
     </>
   );

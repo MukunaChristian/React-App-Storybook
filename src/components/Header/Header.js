@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from '../Button/Button';
 import PropTypes from 'prop-types';
+import Rating from '../Rating/Rating'
 import './header.css';
 
 
@@ -8,8 +9,9 @@ import './header.css';
 export const Header = ({ user, onLogin, onLogout, onCreateAccount,label }) => (
   <header >
     <div className="storybook-header">
-      <div>
+      <div className='flex'>
         <h1>{label}</h1>
+        <Rating/>
       </div>
       <div>
         {user ? (
@@ -27,18 +29,16 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount,label }) => (
         )}
       </div>
 
+      
+
       </div>
   </header>
 );
 
 
 Header.propTypes = {
-
- 
   label: PropTypes.string.isRequired,
-
 };
-Button.defaultProps = {
-  size: 'medium',
-  onClick: undefined,
+Header.defaultProps = {
+  
 };
