@@ -7,6 +7,7 @@ const config = {
     "@storybook/preset-create-react-app",
     "@storybook/addon-onboarding",
     "@storybook/addon-interactions",
+    "@storybook/addon-themes"
   ],
   framework: {
     name: "@storybook/react-webpack5",
@@ -16,5 +17,6 @@ const config = {
     autodocs: "tag",
   },
   staticDirs: ["..\\public"],
+  
 };
 export default config;

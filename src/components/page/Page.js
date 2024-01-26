@@ -2,27 +2,55 @@ import React, { useState } from "react";
 import { Header } from "../Header/Header";
 import FormInput from "../FomInput/FormInput";
 import Title from "../Title/Tite";
-
 import Button from "../Button/Button";
-
 import { page } from "../page/page.css";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Alert } from "@mui/material";
+import Card from '@mui/material/Card';
 
 export const Page = () => {
   const [label] = useState("LogIn");
   const [myName] = useState("Welcome Metalogix Solutions");
-  const [inputValue, setInputValue] = useState("");
-  const [todos, setTodos] = useState([]);
+  const [inputValues, setInputValues] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+  const [showAlert, setShowAlert] = useState(false);
+  const handleInputChange = (fieldName, value) => {
+    setInputValues({
+      ...inputValues,
+      [fieldName]: value,
+    });
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    // You can perform actions with the input values here, e.g., make an API call.
+    console.log("Form submitted with values:", inputValues);
+
+    // Show alert message
+    setShowAlert(true);
+
+    // Reset input values
+    setInputValues({
+      name: "",
+      email: "",
+      password: "",
+    });
+  };
 
   return (
-    <article>
-      <Header />
+      <><Header />
+      <Card style={{ width: "50em" , margin:"auto", marginTop:"5em"}}>
 
       <section className="storybook-page">
         <h2>WHO WE ARE</h2>
         <p>
           <strong>
             <a
-              href="https://componentdriven.org"
+              href="https://metalogix.solutions/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -47,34 +75,33 @@ export const Page = () => {
           flexDirection: "column",
         }}
       >
-        <Title myName={myName} />
-
-        <form
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            marginTop: "20px",
-            gap:'1rem'
-          }}
-        >
+        <form className="input" onSubmit={handleFormSubmit}>
           <FormInput
-            setInputValue={setInputValue}
-            placeholder="Enter your username"
-          />
+            setInputValue={(value) => handleInputChange("name", value)}
+            placeholder={"Enter your name"}
+            value={inputValues.name} />
           <FormInput
-            setInputValue={setInputValue}
+            setInputValue={(value) => handleInputChange("email", value)}
             placeholder="Enter your email"
-          />
+            value={inputValues.email} />
           <FormInput
-            setInputValue={setInputValue}
+            setInputValue={(value) => handleInputChange("password", value)}
             type="password"
             placeholder="Enter your password"
-          />
-          <Button label={label} style={{ marginTop: "10px" }} />
+            value={inputValues.password} />
+
+          <Button
+            className="btn"
+            label={"Log In"}
+            style={{ marginTop: "10px" }}
+            type="submit" />
         </form>
+        {showAlert && (
+          <Alert severity="success" onClose={() => setShowAlert(false)}>
+            Form submitted successfully!
+          </Alert>
+        )}
       </div>
-    </article>
+    </Card></>
   );
 };
-

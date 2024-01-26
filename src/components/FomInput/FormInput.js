@@ -1,14 +1,13 @@
-import { Button } from "@mantine/core";
 import "./FormInput.css";
-import { Input} from '@mantine/core'
 
 import React from "react";
+import { Autocomplete, Input, Stack, TextField } from '@mui/material';
 
 const Form = ({ inputValue, setInputValue, handleSubmit }) => {
   return (
     <>
       
-      <input
+      <Input
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
         className="input"

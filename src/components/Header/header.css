@@ -8,6 +8,9 @@
   font-size: 2em;
   box-shadow: 0 5px 0#99E9F2;
 }
+.flex{
+  display: flex;
+}
 
 .storybook-header svg {
   display: inline-block;
